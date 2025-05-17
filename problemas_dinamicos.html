@@ -250,37 +250,19 @@
   </div>
 
 <script>
-// --------- PROBLEMAS DINÁMICOS ---------
-const plantillas = [
-  {
-    "titulo": "Área de un rectángulo (campo de entrenamiento)",
-    "enunciado": "Un campo de entrenamiento mide {{base}} metros de largo y {{altura}} metros de ancho. ¿Cuál es su área?",
-    "variables": {
-      "base": { "min": 30, "max": 100 },
-      "altura": { "min": 20, "max": 60 }
-    },
-    "formato": "{{base}} * {{altura}}",
-    "pista1": "Área = base × altura.",
-    "pista2": "Multiplica {{base}} por {{altura}}.",
-    "mnemotecnia": "Como una alfombra: largo × ancho.",
-    "formula": "Área = base × altura"
-  },
-  {
-    "titulo": "Área de un círculo (zona de penalti)",
-    "enunciado": "La zona de penalti tiene un radio de {{radio}} m. ¿Cuál es su área? (π ≈ 3,14)",
-    "variables": {
-      "radio": { "min": 5, "max": 12 }
-    },
-    "formato": "3.14 * {{radio}} * {{radio}}",
-    "pista1": "Área del círculo = π × radio².",
-    "pista2": "Multiplica 3,14 × {{radio}} × {{radio}}.",
-    "mnemotecnia": "El círculo gira con π·r².",
-    "formula": "Área = π × radio²"
-  }
-];
-
-
 let estado = {};
+let plantillas = [];
+
+async function cargarPlantillas() {
+  try {
+    const res = await fetch("plantillas_problemas.json");
+    plantillas = await res.json();
+    generarProblema();
+  } catch (error) {
+    console.error("No se pudo cargar plantillas_problemas.json", error);
+    document.getElementById("enunciado").textContent = "Error cargando problemas.";
+  }
+}
 
 function generarProblema() {
   const plantilla = plantillas[Math.floor(Math.random() * plantillas.length)];
@@ -335,21 +317,23 @@ function comprobarRespuesta() {
   const correcta = estado.respuestaCorrecta;
   const fb = document.getElementById("feedback");
   let formula = "";
+
   if (estado.plantilla.formula) {
-    // Si la fórmula tiene {{var}} la reemplazamos por los valores del problema
     formula = "<br><span style='color:#0b3d5c;font-size:1rem;'><b>Fórmula:</b> " +
       estado.plantilla.formula.replace(/{{(\w+)}}/g, (_, v) => estado.variables[v]) + "</span>";
   }
+
   if (input === correcta) {
     fb.innerHTML = `<span class='correcto'>¡Correcto!</span>${formula}`;
   } else {
     fb.innerHTML = `<span class='incorrecto'>Incorrecto.</span> La respuesta era <b>${correcta}</b>${formula}`;
   }
+
   document.getElementById("mnemotecnia").textContent = estado.plantilla.mnemotecnia;
 }
 
-
-window.onload = generarProblema;
+// Inicialización
+window.onload = cargarPlantillas;
 
 // --------- CALCULADORA ESCOLAR ---------
 let calcDisplay = "";
@@ -389,4 +373,5 @@ function copiarResultado() {
   document.getElementById("respuesta-input").focus();
 }
 </script>
+
 </body>
