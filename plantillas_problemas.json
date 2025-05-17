@@ -1,0 +1,562 @@
+[
+  {
+    "tipo": "área_rectángulo",
+    "titulo": "Área de un rectángulo (campo de entrenamiento)",
+    "enunciado": "Un campo de entrenamiento mide {{base}} metros de largo y {{altura}} metros de ancho. ¿Cuál es su área?",
+    "variables": {
+      "base": {
+        "min": 30,
+        "max": 100
+      },
+      "altura": {
+        "min": 20,
+        "max": 60
+      }
+    },
+    "formato": "{{base}} * {{altura}}",
+    "pista1": "Área = base × altura.",
+    "pista2": "Multiplica {{base}} por {{altura}}.",
+    "mnemotecnia": "Como una alfombra: largo × ancho.",
+    "formula": "Área = base × altura"
+  },
+  {
+    "tipo": "perímetro_cuadrado",
+    "titulo": "Perímetro de un cuadrado (zona de mini-juego)",
+    "enunciado": "Se marca una zona cuadrada de {{lado}} metros por lado para un ejercicio. ¿Cuál es su perímetro?",
+    "variables": {
+      "lado": {
+        "min": 5,
+        "max": 15
+      }
+    },
+    "formato": "{{lado}} * 4",
+    "pista1": "Perímetro = 4 × lado.",
+    "pista2": "Multiplica 4 por {{lado}}.",
+    "mnemotecnia": "Cuadrado = 4 lados iguales.",
+    "formula": "Perímetro = 4 × lado"
+  },
+  {
+    "tipo": "área_círculo",
+    "titulo": "Área de un círculo (zona de penalti)",
+    "enunciado": "El semicírculo de penalti tiene un radio de {{radio}} m. ¿Cuál sería el área del círculo completo? Usa π ≈ 3,14.",
+    "variables": {
+      "radio": {
+        "min": 5,
+        "max": 12
+      }
+    },
+    "formato": "3.14 * {{radio}} * {{radio}}",
+    "pista1": "Área del círculo = π × radio².",
+    "pista2": "Multiplica 3,14 × {{radio}} × {{radio}}.",
+    "mnemotecnia": "El círculo gira con π·r².",
+    "formula": "Área = π × radio²"
+  },
+  {
+    "tipo": "área_trapecio",
+    "titulo": "Área de un trapecio (graderío lateral)",
+    "enunciado": "Una grada lateral tiene forma de trapecio con bases de {{base_mayor}} m y {{base_menor}} m, y altura de {{altura}} m. ¿Cuál es su área?",
+    "variables": {
+      "base_mayor": {
+        "min": 20,
+        "max": 40
+      },
+      "base_menor": {
+        "min": 10,
+        "max": 20
+      },
+      "altura": {
+        "min": 5,
+        "max": 15
+      }
+    },
+    "formato": "(({{base_mayor}} + {{base_menor}}) * {{altura}}) / 2",
+    "pista1": "Área = (base mayor + base menor) × altura ÷ 2.",
+    "pista2": "Suma {{base_mayor}} y {{base_menor}}, multiplica por {{altura}}, divide entre 2.",
+    "mnemotecnia": "Trapecio: suma las bases, por altura, entre 2.",
+    "formula": "Área = (base mayor + base menor) × altura ÷ 2"
+  },
+  {
+    "tipo": "área_rombo",
+    "titulo": "Área de un rombo (forma decorativa del césped)",
+    "enunciado": "Una figura decorativa en el césped es un rombo con diagonales de {{D}} y {{d}} metros. ¿Cuál es su área?",
+    "variables": {
+      "D": {
+        "min": 6,
+        "max": 15
+      },
+      "d": {
+        "min": 4,
+        "max": 10
+      }
+    },
+    "formato": "({{D}} * {{d}}) / 2",
+    "pista1": "Área = (diagonal mayor × diagonal menor) ÷ 2.",
+    "pista2": "Multiplica {{D}} por {{d}} y divide entre 2.",
+    "mnemotecnia": "Rombo = D × d ÷ 2.",
+    "formula": "Área = (diagonal mayor × diagonal menor) ÷ 2"
+  },
+  {
+    "tipo": "perimetro_rectangulo",
+    "titulo": "Perímetro de un cartel publicitario",
+    "enunciado": "Un cartel rectangular junto al campo mide {{largo}} metros de largo y {{alto}} metros de alto. ¿Cuál es su perímetro?",
+    "variables": {
+      "largo": {
+        "min": 8,
+        "max": 20
+      },
+      "alto": {
+        "min": 2,
+        "max": 5
+      }
+    },
+    "formato": "2 * ({{largo}} + {{alto}})",
+    "pista1": "Perímetro = 2 × (largo + alto).",
+    "pista2": "Suma {{largo}} + {{alto}} y multiplica por 2.",
+    "mnemotecnia": "Rodea el cartel completo: 2 × (base + altura).",
+    "formula": "Perímetro = 2 × (largo + alto)"
+  },
+  {
+    "tipo": "perimetro_triangulo_equilatero",
+    "titulo": "Perímetro del banderín de córner",
+    "enunciado": "El banderín triangular tiene lados de {{lado}} cm. ¿Cuál es su perímetro?",
+    "variables": {
+      "lado": {
+        "min": 10,
+        "max": 25
+      }
+    },
+    "formato": "{{lado}} * 3",
+    "pista1": "Todos los lados son iguales.",
+    "pista2": "Multiplica {{lado}} × 3.",
+    "mnemotecnia": "Equilátero: 3 lados iguales = lado × 3.",
+    "formula": "Perímetro = 3 × lado"
+  },
+  {
+    "tipo": "area_triangulo",
+    "titulo": "Área del tejado del banquillo",
+    "enunciado": "El tejado del banquillo tiene forma de triángulo con base de {{base}} m y altura de {{altura}} m. ¿Cuál es su área?",
+    "variables": {
+      "base": {
+        "min": 3,
+        "max": 10
+      },
+      "altura": {
+        "min": 2,
+        "max": 6
+      }
+    },
+    "formato": "({{base}} * {{altura}}) / 2",
+    "pista1": "Área = (base × altura) ÷ 2.",
+    "pista2": "Multiplica {{base}} por {{altura}} y divide entre 2.",
+    "mnemotecnia": "Triángulo = base × altura ÷ 2.",
+    "formula": "Área = (base × altura) ÷ 2"
+  },
+  {
+    "tipo": "area_pentagono",
+    "titulo": "Área del escudo del equipo",
+    "enunciado": "El escudo tiene forma de pentágono regular con perímetro {{perimetro}} cm y apotema de {{apotema}} cm. ¿Cuál es su área?",
+    "variables": {
+      "perimetro": {
+        "min": 20,
+        "max": 40
+      },
+      "apotema": {
+        "min": 5,
+        "max": 15
+      }
+    },
+    "formato": "({{perimetro}} * {{apotema}}) / 2",
+    "pista1": "Área = (Perímetro × Apotema) ÷ 2.",
+    "pista2": "Multiplica {{perimetro}} × {{apotema}} y divide entre 2.",
+    "mnemotecnia": "Polígono regular = perímetro × apotema ÷ 2.",
+    "formula": "Área = (Perímetro × Apotema) ÷ 2"
+  },
+  {
+    "tipo": "perimetro_hexagono",
+    "titulo": "Perímetro de celda hexagonal de red",
+    "enunciado": "Una celda de la red del balón tiene lados de {{lado}} cm. ¿Cuál es su perímetro?",
+    "variables": {
+      "lado": {
+        "min": 3,
+        "max": 7
+      }
+    },
+    "formato": "6 * {{lado}}",
+    "pista1": "Hexágono regular = 6 × lado.",
+    "pista2": "Multiplica 6 × {{lado}}.",
+    "mnemotecnia": "Cada lado es igual, y hay 6: lado × 6.",
+    "formula": "Perímetro = 6 × lado"
+  },
+  {
+    "tipo": "area_cuadrado",
+    "titulo": "Área del cuadrado de calentamiento",
+    "enunciado": "Se marca un cuadrado de calentamiento de {{lado}} metros por lado. ¿Cuál es su área?",
+    "variables": {
+      "lado": {
+        "min": 4,
+        "max": 10
+      }
+    },
+    "formato": "{{lado}} * {{lado}}",
+    "pista1": "Área = lado × lado.",
+    "pista2": "Multiplica {{lado}} por sí mismo.",
+    "mnemotecnia": "Área cuadrada: lado al cuadrado.",
+    "formula": "Área = lado × lado"
+  },
+  {
+    "tipo": "area_trapecio_recto",
+    "titulo": "Área de una pancarta inclinada",
+    "enunciado": "Una pancarta tiene forma de trapecio recto, con bases de {{base_mayor}} y {{base_menor}} metros y altura de {{altura}} m. ¿Cuál es su área?",
+    "variables": {
+      "base_mayor": {
+        "min": 10,
+        "max": 25
+      },
+      "base_menor": {
+        "min": 5,
+        "max": 15
+      },
+      "altura": {
+        "min": 2,
+        "max": 8
+      }
+    },
+    "formato": "(({{base_mayor}} + {{base_menor}}) * {{altura}}) / 2",
+    "pista1": "Área = (b₁ + b₂) × h ÷ 2.",
+    "pista2": "Suma {{base_mayor}} + {{base_menor}}, multiplícalo por {{altura}} y divide entre 2.",
+    "mnemotecnia": "Trapecio = (base mayor + menor) × altura ÷ 2.",
+    "formula": "Área = (base mayor + base menor) × altura ÷ 2"
+  },
+  {
+    "tipo": "area_romboide",
+    "titulo": "Área de una carpa inclinada",
+    "enunciado": "Una carpa junto al campo tiene forma de paralelogramo, con base {{base}} m y altura {{altura}} m. ¿Cuál es su área?",
+    "variables": {
+      "base": {
+        "min": 6,
+        "max": 15
+      },
+      "altura": {
+        "min": 3,
+        "max": 7
+      }
+    },
+    "formato": "{{base}} * {{altura}}",
+    "pista1": "Área = base × altura.",
+    "pista2": "Multiplica {{base}} por {{altura}}.",
+    "mnemotecnia": "Como un rectángulo girado: base × altura.",
+    "formula": "Área = base × altura"
+  },
+  {
+    "tipo": "area_circulo_medio",
+    "titulo": "Área del semicírculo de penalti",
+    "enunciado": "La zona semicircular frente al punto de penalti tiene un radio de {{radio}} metros. ¿Cuál es el área del semicírculo? Usa π ≈ 3,14.",
+    "variables": {
+      "radio": {
+        "min": 7,
+        "max": 11
+      }
+    },
+    "formato": "(3.14 * {{radio}} * {{radio}}) / 2",
+    "pista1": "Área círculo = π·r², y luego lo divides entre 2.",
+    "pista2": "Multiplica 3,14 × {{radio}}², y divide entre 2.",
+    "mnemotecnia": "Semicírculo = mitad de un círculo: π·r² ÷ 2.",
+    "formula": "Área = (π × radio²) ÷ 2"
+  },
+  {
+    "tipo": "area_triangulo_escaleno",
+    "titulo": "Área de jugada táctica triangular",
+    "enunciado": "En una pizarra táctica se marca un triángulo con base {{base}} m y altura {{altura}} m. ¿Cuál es su área?",
+    "variables": {
+      "base": {
+        "min": 6,
+        "max": 20
+      },
+      "altura": {
+        "min": 3,
+        "max": 12
+      }
+    },
+    "formato": "({{base}} * {{altura}}) / 2",
+    "pista1": "Área = base × altura ÷ 2.",
+    "pista2": "Multiplica {{base}} por {{altura}}, divide entre 2.",
+    "mnemotecnia": "Triángulo: base por altura, dividido entre 2.",
+    "formula": "Área = (base × altura) ÷ 2"
+  },
+  {
+    "tipo": "area_hexagono",
+    "titulo": "Área de paneles hexagonales del vestuario",
+    "enunciado": "Un panel decorativo en forma de hexágono regular tiene un perímetro de {{perimetro}} cm y una apotema de {{apotema}} cm. ¿Cuál es su área?",
+    "variables": {
+      "perimetro": {
+        "min": 36,
+        "max": 72
+      },
+      "apotema": {
+        "min": 6,
+        "max": 18
+      }
+    },
+    "formato": "({{perimetro}} * {{apotema}}) / 2",
+    "pista1": "Área = (Perímetro × Apotema) ÷ 2.",
+    "pista2": "Multiplica {{perimetro}} × {{apotema}}, y divide entre 2.",
+    "mnemotecnia": "Polígonos regulares = perímetro × apotema ÷ 2.",
+    "formula": "Área = (Perímetro × Apotema) ÷ 2"
+  },
+  {
+    "tipo": "area_rectangulo_alfombra",
+    "titulo": "Área de una alfombra rectangular en vestuario",
+    "enunciado": "La alfombra tiene {{base}} metros de largo y {{altura}} metros de ancho. ¿Cuál es su área?",
+    "variables": {
+      "base": {
+        "min": 2,
+        "max": 6
+      },
+      "altura": {
+        "min": 1,
+        "max": 3
+      }
+    },
+    "formato": "{{base}} * {{altura}}",
+    "pista1": "Área = largo × ancho.",
+    "pista2": "Multiplica {{base}} × {{altura}}.",
+    "mnemotecnia": "Alfombra: largo × ancho.",
+    "formula": "Área = largo × ancho"
+  },
+  {
+    "tipo": "area_cuadrado_pizarra",
+    "titulo": "Área de la pizarra táctica",
+    "enunciado": "La pizarra tiene forma cuadrada y mide {{lado}} metros por lado. ¿Cuál es su área?",
+    "variables": {
+      "lado": {
+        "min": 1,
+        "max": 3
+      }
+    },
+    "formato": "{{lado}} * {{lado}}",
+    "pista1": "Área = lado × lado.",
+    "pista2": "Multiplica {{lado}} por sí mismo.",
+    "mnemotecnia": "Cuadrado = lado al cuadrado.",
+    "formula": "Área = lado × lado"
+  },
+  {
+    "tipo": "perimetro_rombo",
+    "titulo": "Perímetro de señal romboidal de seguridad",
+    "enunciado": "Una señal de advertencia tiene forma de rombo y lados de {{lado}} cm. ¿Cuál es su perímetro?",
+    "variables": {
+      "lado": {
+        "min": 10,
+        "max": 30
+      }
+    },
+    "formato": "4 * {{lado}}",
+    "pista1": "Perímetro = 4 × lado.",
+    "pista2": "Multiplica {{lado}} × 4.",
+    "mnemotecnia": "Rombo: 4 lados iguales.",
+    "formula": "Perímetro = 4 × lado"
+  },
+  {
+    "tipo": "area_triangulo_cesped",
+    "titulo": "Área de una zona triangular del césped",
+    "enunciado": "Un área triangular del césped tiene base de {{base}} m y altura de {{altura}} m. ¿Cuál es su área?",
+    "variables": {
+      "base": {
+        "min": 8,
+        "max": 16
+      },
+      "altura": {
+        "min": 3,
+        "max": 10
+      }
+    },
+    "formato": "({{base}} * {{altura}}) / 2",
+    "pista1": "Área = base × altura ÷ 2.",
+    "pista2": "Multiplica {{base}} × {{altura}} y divide entre 2.",
+    "mnemotecnia": "Triángulo = base por altura entre 2.",
+    "formula": "Área = (base × altura) ÷ 2"
+  },
+  {
+    "tipo": "perimetro_pentagono_escudo",
+    "titulo": "Perímetro del escudo pentagonal",
+    "enunciado": "El escudo del equipo tiene forma de pentágono con lados de {{lado}} cm. ¿Cuál es su perímetro?",
+    "variables": {
+      "lado": {
+        "min": 4,
+        "max": 12
+      }
+    },
+    "formato": "{{lado}} * 5",
+    "pista1": "Pentágono regular = 5 × lado.",
+    "pista2": "Multiplica {{lado}} × 5.",
+    "mnemotecnia": "5 lados iguales: lado × 5.",
+    "formula": "Perímetro = 5 × lado"
+  },
+  {
+    "tipo": "area_trapecio_publicidad",
+    "titulo": "Área de pancarta trapezoidal en grada",
+    "enunciado": "Una pancarta tiene forma de trapecio con bases {{base_mayor}} y {{base_menor}} metros, y altura {{altura}} m. ¿Cuál es su área?",
+    "variables": {
+      "base_mayor": {
+        "min": 12,
+        "max": 25
+      },
+      "base_menor": {
+        "min": 5,
+        "max": 12
+      },
+      "altura": {
+        "min": 2,
+        "max": 7
+      }
+    },
+    "formato": "(({{base_mayor}} + {{base_menor}}) * {{altura}}) / 2",
+    "pista1": "Área = (base mayor + base menor) × altura ÷ 2.",
+    "pista2": "Suma bases y multiplica por altura, luego divide entre 2.",
+    "mnemotecnia": "Trapecio = suma de bases × altura ÷ 2.",
+    "formula": "Área = (base mayor + base menor) × altura ÷ 2"
+  },
+  {
+    "tipo": "area_paralelogramo_toldo",
+    "titulo": "Área del toldo del banquillo",
+    "enunciado": "El toldo tiene forma de paralelogramo con base {{base}} m y altura {{altura}} m. ¿Cuál es su área?",
+    "variables": {
+      "base": {
+        "min": 5,
+        "max": 12
+      },
+      "altura": {
+        "min": 2,
+        "max": 5
+      }
+    },
+    "formato": "{{base}} * {{altura}}",
+    "pista1": "Área = base × altura.",
+    "pista2": "Multiplica {{base}} × {{altura}}.",
+    "mnemotecnia": "Paralelogramo: como un rectángulo inclinado.",
+    "formula": "Área = base × altura"
+  },
+  {
+    "tipo": "area_circulo_marcaje",
+    "titulo": "Área del círculo central",
+    "enunciado": "El círculo central tiene un radio de {{radio}} metros. ¿Cuál es su área? (π ≈ 3,14)",
+    "variables": {
+      "radio": {
+        "min": 7,
+        "max": 11
+      }
+    },
+    "formato": "3.14 * {{radio}} * {{radio}}",
+    "pista1": "Área = π × radio².",
+    "pista2": "Multiplica 3,14 × {{radio}}².",
+    "mnemotecnia": "Área circular: π·r².",
+    "formula": "Área = π × radio²"
+  },
+  {
+    "tipo": "area_rombo_cesped",
+    "titulo": "Área de adorno romboidal en el césped",
+    "enunciado": "Un diseño decorativo del césped tiene forma de rombo, con diagonales de {{D}} y {{d}} metros. ¿Cuál es su área?",
+    "variables": {
+      "D": {
+        "min": 5,
+        "max": 14
+      },
+      "d": {
+        "min": 3,
+        "max": 10
+      }
+    },
+    "formato": "({{D}} * {{d}}) / 2",
+    "pista1": "Área = (diagonal mayor × diagonal menor) ÷ 2.",
+    "pista2": "Multiplica {{D}} × {{d}}, divide entre 2.",
+    "mnemotecnia": "Rombo = D × d ÷ 2.",
+    "formula": "Área = (diagonal mayor × diagonal menor) ÷ 2"
+  },
+  {
+    "tipo": "area_rectangulo_fijo",
+    "titulo": "Área de un rectángulo (campo de fútbol)",
+    "enunciado": "El terreno de juego de un equipo mide {{base}} metros de largo y {{altura}} metros de ancho. ¿Cuál es el área total del campo?",
+    "variables": {
+      "base": {
+        "min": 100,
+        "max": 100
+      },
+      "altura": {
+        "min": 64,
+        "max": 64
+      }
+    },
+    "formato": "{{base}} * {{altura}}",
+    "pista1": "Recuerda: el área de un rectángulo es base por altura.",
+    "pista2": "Multiplica {{base}} por {{altura}}.",
+    "mnemotecnia": "Como una alfombra: largo × ancho.",
+    "formula": "Área = base × altura"
+  },
+  {
+    "tipo": "area_cuadrado_fijo",
+    "titulo": "Área de un cuadrado (zona de calentamiento)",
+    "enunciado": "Un cuadrado de césped para calentamiento mide {{lado}} metros por lado. ¿Cuál es su área?",
+    "variables": {
+      "lado": {
+        "min": 6,
+        "max": 6
+      }
+    },
+    "formato": "{{lado}} * {{lado}}",
+    "pista1": "Área de un cuadrado = lado × lado.",
+    "pista2": "Multiplica {{lado}} × {{lado}}.",
+    "mnemotecnia": "Piensa en un cuadrado como una portería vista desde arriba: lado al cuadrado.",
+    "formula": "Área = lado × lado"
+  },
+  {
+    "tipo": "area_circulo_fijo",
+    "titulo": "Área de un círculo (círculo central)",
+    "enunciado": "El círculo central del campo tiene {{radio}} m de radio. ¿Cuál es su área? (Usa π ≈ 3,14 y redondea a dos decimales)",
+    "variables": {
+      "radio": {
+        "min": 9.15,
+        "max": 9.15
+      }
+    },
+    "formato": "3.14 * {{radio}} * {{radio}}",
+    "pista1": "Área del círculo = π × radio².",
+    "pista2": "Multiplica 3,14 × {{radio}} × {{radio}}.",
+    "mnemotecnia": "El círculo gira con π·r².",
+    "formula": "Área = π × radio²"
+  },
+  {
+    "tipo": "perimetro_triangulo_equilatero_fijo",
+    "titulo": "Perímetro de un triángulo equilátero (banderín de esquina)",
+    "enunciado": "La tela del banderín de córner tiene forma de triángulo equilátero de {{lado}} cm de lado. ¿Cuál es su perímetro?",
+    "variables": {
+      "lado": {
+        "min": 20,
+        "max": 20
+      }
+    },
+    "formato": "{{lado}} * 3",
+    "pista1": "Equilátero = tres lados iguales.",
+    "pista2": "Multiplica {{lado}} × 3.",
+    "mnemotecnia": "Triángulo equilátero: suma los tres lados iguales.",
+    "formula": "Perímetro = 3 × lado"
+  },
+  {
+    "tipo": "area_triangulo_isosceles_fijo",
+    "titulo": "Área de un triángulo isósceles (formación táctica)",
+    "enunciado": "Un entrenador dibuja un triángulo isósceles para mostrar una jugada. Tiene base {{base}} m y altura {{altura}} m. ¿Cuál es el área?",
+    "variables": {
+      "base": {
+        "min": 8,
+        "max": 8
+      },
+      "altura": {
+        "min": 5,
+        "max": 5
+      }
+    },
+    "formato": "({{base}} * {{altura}}) / 2",
+    "pista1": "Área = (base × altura) ÷ 2.",
+    "pista2": "Multiplica {{base}} × {{altura}} y divide entre 2.",
+    "mnemotecnia": "Triángulo: base por altura dividido por 2.",
+    "formula": "Área = (base × altura) ÷ 2"
+  }
+]
