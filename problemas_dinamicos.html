@@ -64,14 +64,14 @@
 }
 @media (max-width: 600px) {
   .nav-btns {
-    top: 8px;
-    right: 10px;
-    gap: 4px;
+    top: 4px;
+    right: 2px;
+    gap: 2px;
   }
   .nav-btns button {
-    font-size: 0.97rem;
-    padding: 6px 10px;
-    border-radius: 10px;
+    font-size: 0.8rem;
+    padding: 4px 6px;
+    border-radius: 7px;
   }
 }
     .header {
@@ -253,13 +253,101 @@
       .problem-container {
         flex-direction: column;
         align-items: stretch;
-        gap: 26px;
-        padding: 20px 4vw 14px 4vw;
+        gap: 18px;
+        padding: 16px 2vw 10px 2vw;
+        min-width: 0;
       }
       .calculator {
         max-width: 100%;
         min-width: 0;
         align-self: stretch;
+        margin-top: 18px;
+      }
+      .main-side {
+        max-width: 100vw;
+        min-width: 0;
+      }
+      .header-content {
+        font-size: 1.2rem;
+      }
+      .nav-btns button {
+        font-size: 0.95rem;
+        padding: 6px 10px;
+        border-radius: 10px;
+      }
+    }
+    @media (max-width: 600px) {
+      .problem-container {
+        padding: 6px 0 0 0;
+        gap: 10px;
+        box-shadow: none;
+        min-width: 0;
+      }
+      .header {
+        padding: 12px 2px 7px 2px;
+        font-size: 1rem;
+        border-radius: 0 0 18px 18px;
+      }
+      .header-content {
+        font-size: 1rem;
+        gap: 4px;
+      }
+      .header-icon {
+        font-size: 1.2rem;
+      }
+      .main-side {
+        max-width: 100vw;
+        min-width: 0;
+      }
+      .problem {
+        font-size: 1rem;
+      }
+      input[type="text"]#respuesta-input {
+        font-size: 1rem;
+        padding: 8px 8px;
+        border-radius: 8px;
+      }
+      .button-row {
+        gap: 6px;
+      }
+      button {
+        font-size: 0.9rem;
+        padding: 7px 10px;
+        border-radius: 8px;
+      }
+      .feedback {
+        font-size: 1rem;
+      }
+      .mnemotecnia {
+        font-size: 0.95rem;
+      }
+      .calculator {
+        padding: 10px 4px 8px 4px;
+        min-width: 0;
+        max-width: 100vw;
+        border-radius: 10px;
+      }
+      .calculator-title {
+        font-size: 1rem;
+      }
+      input[type="text"]#calc-display {
+        font-size: 1rem;
+        padding: 6px 2px;
+        border-radius: 6px;
+      }
+      .calc-grid {
+        gap: 4px;
+      }
+      .calculator button {
+        min-width: 28px;
+        min-height: 28px;
+        font-size: 0.9rem;
+        border-radius: 6px;
+      }
+      .calculator .calc-action {
+        font-size: 0.95rem;
+        border-radius: 6px;
+        padding: 7px 0;
       }
     }
     @media (max-width: 500px) {

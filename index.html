@@ -193,11 +193,90 @@
   }
 }
 
-
     .progress {
       margin-top: 4px;
       font-size: 1rem;
       color: #1b4d3e;
+    }
+
+    @media (max-width: 900px) {
+      .main-container {
+        padding-top: 30px;
+      }
+      .card-container {
+        width: 90vw;
+        height: 65vw;
+        min-height: 220px;
+        min-width: 150px;
+        max-width: 98vw;
+        max-height: 70vw;
+      }
+      .card-title {
+        font-size: 1.1rem;
+      }
+      .svg-figura {
+        width: 70px;
+        height: 70px;
+      }
+      .header-content {
+        font-size: 1.2rem;
+      }
+      .nav-btns button {
+        font-size: 0.95rem;
+        padding: 6px 10px;
+        border-radius: 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .main-container {
+        padding-top: 18px;
+      }
+      .card-container {
+        width: 98vw;
+        height: 70vw;
+        min-height: 160px;
+        min-width: 100px;
+        max-width: 99vw;
+        max-height: 80vw;
+      }
+      .card-title {
+        font-size: 1rem;
+      }
+      .svg-figura {
+        width: 50px;
+        height: 50px;
+      }
+      .header-content {
+        font-size: 1rem;
+        gap: 4px;
+      }
+      .header-icon {
+        font-size: 1.2rem;
+      }
+      .nav-btns {
+        top: 4px;
+        right: 2px;
+        gap: 2px;
+      }
+      .nav-btns button {
+        font-size: 0.8rem;
+        padding: 4px 6px;
+        border-radius: 7px;
+      }
+      .progress {
+        font-size: 0.85rem;
+      }
+      .buttons {
+        gap: 6px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      button {
+        font-size: 1rem;
+        padding: 8px 10px;
+        border-radius: 10px;
+      }
     }
 
     @media (max-width: 600px) {
