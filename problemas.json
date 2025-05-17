@@ -1,0 +1,258 @@
+[
+  {
+    "titulo": "Área de un rectángulo (campo de fútbol)",
+    "enunciado": "El terreno de juego de un equipo mide 100 metros de largo y 64 metros de ancho. ¿Cuál es el área total del campo?",
+    "respuesta": ["6400", "6400m2", "6400 metros cuadrados"],
+    "pista1": "Recuerda: el área de un rectángulo es base por altura.",
+    "pista2": "Multiplica 100 por 64.",
+    "mnemotecnia": "Como una alfombra: largo × ancho."
+  },
+  {
+    "titulo": "Área de un cuadrado (zona de calentamiento)",
+    "enunciado": "Un cuadrado de césped para calentamiento mide 6 metros por lado. ¿Cuál es su área?",
+    "respuesta": ["36", "36m2", "36 metros cuadrados"],
+    "pista1": "Área de un cuadrado = lado × lado.",
+    "pista2": "Multiplica 6 × 6.",
+    "mnemotecnia": "Piensa en un cuadrado como una portería vista desde arriba: lado al cuadrado."
+  },
+  {
+    "titulo": "Área de un círculo (círculo central)",
+    "enunciado": "El círculo central del campo tiene 9,15 m de radio. ¿Cuál es su área? (Usa π ≈ 3,14 y redondea a dos decimales)",
+    "respuesta": ["263,89", "263.89", "263.89m2", "263,89m2"],
+    "pista1": "Área del círculo = π × radio².",
+    "pista2": "Multiplica 3,14 × 9,15 × 9,15.",
+    "mnemotecnia": "El círculo gira con π·r²."
+  },
+  {
+    "titulo": "Perímetro de un triángulo equilátero (banderín de esquina)",
+    "enunciado": "La tela del banderín de córner tiene forma de triángulo equilátero de 20 cm de lado. ¿Cuál es su perímetro?",
+    "respuesta": ["60", "60cm", "60 centímetros"],
+    "pista1": "Equilátero = tres lados iguales.",
+    "pista2": "Multiplica 20 × 3.",
+    "mnemotecnia": "Triángulo equilátero: suma los tres lados iguales."
+  },
+  {
+    "titulo": "Área de un triángulo isósceles (formación táctica)",
+    "enunciado": "Un entrenador dibuja un triángulo isósceles para mostrar una jugada. Tiene base 8 m y altura 5 m. ¿Cuál es el área?",
+    "respuesta": ["20", "20m2", "20 metros cuadrados"],
+    "pista1": "Área = (base × altura) ÷ 2.",
+    "pista2": "Multiplica 8 × 5 y divide entre 2.",
+    "mnemotecnia": "Triángulo: base por altura dividido por 2."
+  },
+  {
+    "titulo": "Área de un paralelogramo (zona técnica)",
+    "enunciado": "La zona técnica donde el entrenador puede moverse tiene forma de paralelogramo, con base 6 m y altura 3 m. ¿Cuál es su área?",
+    "respuesta": ["18", "18m2", "18 metros cuadrados"],
+    "pista1": "Área del paralelogramo = base × altura.",
+    "pista2": "Multiplica 6 por 3.",
+    "mnemotecnia": "Como un rectángulo inclinado: base × altura."
+  },
+  {
+    "titulo": "Área de un rombo (zona de córner especial)",
+    "enunciado": "Una zona decorativa junto al córner tiene forma de rombo, con diagonales de 10 y 6 metros. ¿Cuál es su área?",
+    "respuesta": ["30", "30m2", "30 metros cuadrados"],
+    "pista1": "Área del rombo = (D × d) ÷ 2.",
+    "pista2": "Multiplica 10 por 6 y divide entre 2.",
+    "mnemotecnia": "Rombo: diagonal mayor por menor dividido entre 2."
+  },
+  {
+    "titulo": "Área de un trapecio (graderío inferior)",
+    "enunciado": "Un sector del graderío tiene forma de trapecio, con bases de 12 y 20 metros, y altura de 5 m. ¿Cuál es su área?",
+    "respuesta": ["80", "80m2", "80 metros cuadrados"],
+    "pista1": "Área = ((base mayor + base menor) × altura) ÷ 2.",
+    "pista2": "Suma 12 y 20, multiplica por 5 y divide entre 2.",
+    "mnemotecnia": "Trapecio: suma las bases, multiplícalas por la altura, y divide entre 2."
+  },
+  {
+    "titulo": "Área de un trapecio rectángulo (pancarta lateral)",
+    "enunciado": "Una pancarta en forma de trapecio rectángulo tiene bases de 8 m y 12 m, y altura de 4 m. ¿Cuál es su área?",
+    "respuesta": ["40", "40m2", "40 metros cuadrados"],
+    "pista1": "Aplica la misma fórmula del trapecio.",
+    "pista2": "Suma 8 y 12, multiplica por 4 y divide entre 2.",
+    "mnemotecnia": "Trapecio recto = fórmula del trapecio normal."
+  },
+  {
+    "titulo": "Perímetro de un triángulo escaleno (plano de jugada)",
+    "enunciado": "Un triángulo que representa una jugada tiene lados de 5 m, 6 m y 7 m. ¿Cuál es su perímetro?",
+    "respuesta": ["18", "18m", "18 metros"],
+    "pista1": "Suma los tres lados.",
+    "pista2": "5 + 6 + 7 = ?",
+    "mnemotecnia": "Triángulo escaleno = suma todo, sin repetir."
+  },
+  {
+    "titulo": "Perímetro de un hexágono (cartel publicitario)",
+    "enunciado": "Un cartel publicitario tiene forma de hexágono regular con lados de 2 m. ¿Cuál es su perímetro?",
+    "respuesta": ["12", "12m", "12 metros"],
+    "pista1": "Hexágono regular = 6 lados iguales.",
+    "pista2": "Multiplica 6 × 2.",
+    "mnemotecnia": "6 lados iguales: 6 × lado."
+  },
+  {
+    "titulo": "Área de un pentágono (escudo del equipo)",
+    "enunciado": "El escudo del equipo tiene forma de pentágono regular con apotema de 3 cm y perímetro de 20 cm. ¿Cuál es su área?",
+    "respuesta": ["30", "30cm2", "30 centímetros cuadrados"],
+    "pista1": "Área = (Perímetro × Apotema) ÷ 2.",
+    "pista2": "Multiplica 20 por 3 y divide entre 2.",
+    "mnemotecnia": "Figura poligonal regular: perímetro × apotema ÷ 2."
+  },
+    {
+        "titulo": "Área de un hexágono (balón de fútbol)",
+        "enunciado": "Un balón de fútbol tiene forma de hexágono regular con apotema de 4 cm y perímetro de 24 cm. ¿Cuál es su área?",
+        "respuesta": ["48", "48cm2", "48 centímetros cuadrados"],
+        "pista1": "Aplica la fórmula del pentágono.",
+        "pista2": "Multiplica 24 por 4 y divide entre 2.",
+        "mnemotecnia": "Hexágono: perímetro × apotema ÷ 2."
+    },
+   {
+    "titulo": "Área de un círculo (balón de fútbol)",
+    "enunciado": "Un balón de fútbol tiene un radio de 11 cm. ¿Cuál es su área en cm²? (Usa π ≈ 3,14 y redondea a dos decimales)",
+    "respuesta": ["379.94", "379,94"],
+    "pista1": "Área del círculo = π × radio al cuadrado.",
+    "pista2": "Calcula 3,14 × 11 × 11.",
+    "mnemotecnia": "Un balón redondo: piensa en π·r²."
+  },
+  {
+    "titulo": "Perímetro de un rectángulo (cartel del estadio)",
+    "enunciado": "Un cartel tiene 10 metros de largo y 2 metros de alto. ¿Cuál es su perímetro?",
+    "respuesta": ["24", "24m", "24 metros"],
+    "pista1": "Perímetro = 2 × (largo + alto).",
+    "pista2": "Suma 10 + 2 y multiplica por 2.",
+    "mnemotecnia": "Da la vuelta completa al cartel: 2(largo + ancho)."
+  },
+  {
+    "titulo": "Área de un trapecio (graderío superior)",
+    "enunciado": "La parte superior del graderío forma un trapecio de bases 25 m y 15 m, y altura de 10 m. ¿Cuál es su área?",
+    "respuesta": ["200", "200m2", "200 metros cuadrados"],
+    "pista1": "Área = ((base mayor + base menor) × altura) ÷ 2.",
+    "pista2": "Suma 25 + 15, multiplica por 10 y divide entre 2.",
+    "mnemotecnia": "Trapecio: suma las bases, por altura, entre 2."
+  },
+  {
+    "titulo": "Área de un triángulo escaleno (pizarra del entrenador)",
+    "enunciado": "En una pizarra, un triángulo representa una jugada. Tiene base 12 cm y altura 4 cm. ¿Cuál es su área?",
+    "respuesta": ["24", "24cm2", "24 centímetros cuadrados"],
+    "pista1": "Área de triángulo = (base × altura) ÷ 2.",
+    "pista2": "Multiplica 12 por 4 y divide entre 2.",
+    "mnemotecnia": "Triángulo = base × altura ÷ 2. Siempre."
+  },
+  {
+    "titulo": "Perímetro de un pentágono (escudo alternativo)",
+    "enunciado": "Un escudo con forma de pentágono tiene lados de 7 cm. ¿Cuál es su perímetro?",
+    "respuesta": ["35", "35cm", "35 centímetros"],
+    "pista1": "Perímetro = número de lados × medida del lado.",
+    "pista2": "Multiplica 5 × 7.",
+    "mnemotecnia": "Pentágono regular = 5 × lado."
+  },
+  {
+    "titulo": "Área de un rectángulo (marcador electrónico)",
+    "enunciado": "El marcador del estadio mide 12 metros de ancho y 4 metros de alto. ¿Cuál es su área?",
+    "respuesta": ["48", "48m2", "48 metros cuadrados"],
+    "pista1": "Área de rectángulo = base × altura.",
+    "pista2": "Multiplica 12 × 4.",
+    "mnemotecnia": "Pantalla = largo × alto, como una tele."
+  },
+  {
+    "titulo": "Perímetro de un cuadrado (zona de juego reducido)",
+    "enunciado": "En un entrenamiento, delimitan un cuadrado de 9 m de lado. ¿Cuál es el perímetro?",
+    "respuesta": ["36", "36m", "36 metros"],
+    "pista1": "Perímetro = 4 × lado.",
+    "pista2": "Multiplica 9 × 4.",
+    "mnemotecnia": "Cuatro lados iguales: 4 × lado."
+  },
+  {
+    "titulo": "Área de un paralelogramo (zona VIP techada)",
+    "enunciado": "Una carpa con forma de paralelogramo tiene base 8 m y altura 5 m. ¿Cuál es su área?",
+    "respuesta": ["40", "40m2", "40 metros cuadrados"],
+    "pista1": "Área = base × altura.",
+    "pista2": "Multiplica 8 × 5.",
+    "mnemotecnia": "Como un rectángulo tumbado: base × altura."
+  },
+  {
+    "titulo": "Área de un hexágono regular (sala táctica)",
+    "enunciado": "Una sala hexagonal tiene perímetro de 36 m y apotema de 5,2 m. ¿Cuál es su área?",
+    "respuesta": ["93.6", "93,6", "93.60", "93,60"],
+    "pista1": "Área = (Perímetro × Apotema) ÷ 2.",
+    "pista2": "Multiplica 36 por 5,2 y divide entre 2.",
+    "mnemotecnia": "Fórmula general para polígonos regulares: P×a÷2."
+  },
+  {
+    "titulo": "Área de un rombo (zona de banderines)",
+    "enunciado": "Una zona decorativa tiene forma de rombo con diagonales de 4 m y 3 m. ¿Cuál es su área?",
+    "respuesta": ["6", "6m2", "6 metros cuadrados"],
+    "pista1": "Área = (D × d) ÷ 2.",
+    "pista2": "Multiplica 4 × 3 y divide entre 2.",
+    "mnemotecnia": "Rombo = diagonales multiplicadas entre 2."
+  },
+ {
+    "titulo": "Área de un triángulo rectángulo (zona de entrenamiento)",
+    "enunciado": "En un ejercicio de técnica, delimitan una zona triangular con base 10 m y altura 6 m. ¿Cuál es su área?",
+    "respuesta": ["30", "30m2", "30 metros cuadrados"],
+    "pista1": "Área de triángulo = (base × altura) ÷ 2.",
+    "pista2": "Multiplica 10 × 6 y divide entre 2.",
+    "mnemotecnia": "Base por altura entre 2, siempre en triángulos."
+  },
+  {
+    "titulo": "Perímetro de un trapecio (estructura de grada portátil)",
+    "enunciado": "Una grada portátil tiene lados de 10 m, 6 m, 8 m y 6 m. ¿Cuál es su perímetro?",
+    "respuesta": ["30", "30m", "30 metros"],
+    "pista1": "Perímetro = suma de todos los lados.",
+    "pista2": "Suma 10 + 6 + 8 + 6.",
+    "mnemotecnia": "Trapecio = cuenta todos los lados, no repitas fórmula de área."
+  },
+  {
+    "titulo": "Área de un triángulo isósceles (banquillo cubierto)",
+    "enunciado": "El tejado del banquillo forma un triángulo isósceles de base 5 m y altura 2,5 m. ¿Cuál es su área?",
+    "respuesta": ["6.25", "6,25", "6.25m2", "6,25m2"],
+    "pista1": "Área = base × altura ÷ 2.",
+    "pista2": "Multiplica 5 × 2,5 y divide entre 2.",
+    "mnemotecnia": "Triángulo: mide base y altura, divide por 2."
+  },
+  {
+    "titulo": "Área de un pentágono (zona VIP con forma decorativa)",
+    "enunciado": "Una loseta decorativa en la zona VIP tiene forma de pentágono regular, con perímetro 30 cm y apotema 4 cm. ¿Cuál es su área?",
+    "respuesta": ["60", "60cm2", "60 centímetros cuadrados"],
+    "pista1": "Área = (Perímetro × Apotema) ÷ 2.",
+    "pista2": "Multiplica 30 × 4 y divide entre 2.",
+    "mnemotecnia": "Polígonos regulares: P×a÷2."
+  },
+  {
+    "titulo": "Área de un trapecio rectángulo (cartel inclinado)",
+    "enunciado": "Un cartel inclinado tiene bases de 9 y 15 metros, y una altura perpendicular de 4 m. ¿Cuál es su área?",
+    "respuesta": ["48", "48m2", "48 metros cuadrados"],
+    "pista1": "Usa fórmula del trapecio: suma de bases × altura ÷ 2.",
+    "pista2": "Suma 9 + 15 = 24, luego 24 × 4 ÷ 2.",
+    "mnemotecnia": "Trapecio (recto o no) siempre: (b₁ + b₂) × h ÷ 2."
+  },
+  {
+    "titulo": "Perímetro de un hexágono (forma en la red del balón)",
+    "enunciado": "Una de las celdas hexagonales de la red tiene lados de 5 cm. ¿Cuál es su perímetro?",
+    "respuesta": ["30", "30cm", "30 centímetros"],
+    "pista1": "Hexágono regular = 6 lados iguales.",
+    "pista2": "Multiplica 6 × 5.",
+    "mnemotecnia": "6 lados iguales = 6 × lado."
+  },
+  {
+    "titulo": "Área de un cuadrado (zona de tiro libre)",
+    "enunciado": "Se delimita una zona de tiro libre de forma cuadrada con 4 metros por lado. ¿Cuál es su área?",
+    "respuesta": ["16", "16m2", "16 metros cuadrados"],
+    "pista1": "Área del cuadrado = lado × lado.",
+    "pista2": "Multiplica 4 × 4.",
+    "mnemotecnia": "Cuadrado: lado al cuadrado."
+  },
+  {
+    "titulo": "Área de un paralelogramo (barrera publicitaria inclinada)",
+    "enunciado": "Una pancarta inclinada tiene forma de paralelogramo, con base de 7 m y altura 2 m. ¿Cuál es su área?",
+    "respuesta": ["14", "14m2", "14 metros cuadrados"],
+    "pista1": "Área del paralelogramo = base × altura.",
+    "pista2": "Multiplica 7 × 2.",
+    "mnemotecnia": "Rectángulo inclinado = base × altura."
+  },
+  {
+    "titulo": "Área de un círculo (zona de penalti)",
+    "enunciado": "El semicírculo del área de penalti tiene radio de 9,15 m. ¿Cuál sería su área si fuera un círculo completo? (π ≈ 3,14)",
+    "respuesta": ["263.89", "263,89", "263.89m2", "263,89m2"],
+    "pista1": "Área del círculo = π × radio².",
+    "pista2": "Calcula 3,14 × 9,15 × 9,15.",
+    "mnemotecnia": "Área circular = π·r²."
+  }
+]

@@ -11,10 +11,6 @@
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
     .main-container {
       display: flex;
@@ -144,6 +140,60 @@
       font-size: 2rem;
     }
 
+.header {
+  position: relative; /* Permite posicionar elementos hijos absolutos */
+}
+
+.nav-btns {
+  position: absolute;
+  top: 18px;
+  right: 28px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.nav-btns button {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border-radius: 16px;
+  border: none;
+  background: #b2f0ff;
+  color: #1877b7;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+.nav-btns button:active {
+  background: #8ed6ea;
+  color: #0b3d5c;
+  transform: scale(0.97);
+}
+
+/* Opcional: botón de la página actual desactivado */
+.nav-btns button.active {
+  background: #e6f7ff;
+  color: #1b4d3e;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* En móvil, adaptar tamaño y posición */
+@media (max-width: 600px) {
+  .nav-btns {
+    top: 8px;
+    right: 10px;
+    gap: 4px;
+  }
+  .nav-btns button {
+    font-size: 0.97rem;
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
+}
+
+
     .progress {
       margin-top: 4px;
       font-size: 1rem;
@@ -167,15 +217,20 @@
     }
   </style>
 </head>
-<header class="header">
-  <div class="header-content">
-    <span class="header-icon">⚽</span>
-    <span>Mateo, ¡vamos a estudiar geometría!</span>
-    <span class="header-icon">📐</span>
-  </div>
-  <div class="progress" id="progress">Tarjeta 1 de 13</div>
-</header>
+
 <body>
+  <header class="header">
+    <div class="header-content">
+      <span class="header-icon">⚽</span>
+      <span>Mateo, ¡vamos a estudiar geometría!</span>
+      <span class="header-icon">📐</span>
+    </div>
+    <div class="nav-btns">
+      <button class="active" onclick="window.location.href='index.html'">Tarjetas</button>
+      <button onclick="window.location.href='problemas.html'">Problemas</button>
+    </div>
+    <div class="progress" id="progress">Tarjeta 1 de 13</div>
+  </header>
   <div class="main-container">
     <div class="card-container">
       <div class="card" id="flashcard">
@@ -277,12 +332,23 @@
           `Tarjeta ${indiceActual + 1} de ${tarjetas.length}`;
       }
     
+      function normalizarTexto(texto) {
+        return texto
+          .toLowerCase()                 // Convertir a minúsculas
+          .replace(/\s+/g, '')           // Eliminar espacios
+          .replace(/[×xX*]/g, '·')       // Normalizar signos de multiplicación
+          .replace(/\^2/g, '²')          // Normalizar potencias
+          .replace(/²²/g, '²')           // Evitar duplicados
+          .replace(/[()]/g, '');         // Eliminar paréntesis
+      }
+
       function comprobarArea() {
         if (areaComprobada) return;
         const tarjeta = tarjetas[indiceActual];
-        const input = document.getElementById('area-input').value.trim().replace(/\\s+/g, '').toLowerCase();
-        const solucion = tarjeta.area.trim().replace(/\\s+/g, '').toLowerCase();
+        const input = normalizarTexto(document.getElementById('area-input').value);
+        const solucion = normalizarTexto(tarjeta.area);
         const feedback = document.getElementById('feedback');
+        
         if (input === solucion) {
           feedback.innerHTML = `<span style='color:green;font-weight:bold;'>¡Correcto!</span><br>Área: <b>${tarjeta.area}</b><br><span class='mnemotecnia'>${tarjeta.mnemotecnia}</span>`;
         } else {
@@ -290,7 +356,7 @@
         }
         areaComprobada = true;
       }
-    
+          
       document.getElementById('flip-btn').addEventListener('click', () => {
         const card = document.getElementById('flashcard');
         card.classList.toggle('flipped');

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problemas de Geometría - Mateo</title>
+  <style>
+    body {
+      background: linear-gradient(120deg, #e0ffe7 0%, #b2f0ff 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.85);
+      width: 100%;
+      padding: 16px 0 8px 0;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .header-content {
+      font-size: 1.5rem;
+      color: #1877b7;
+      font-weight: bold;
+      font-family: 'Fredoka One', cursive;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+    }
+    .nav-btns {
+      position: absolute;
+      right: 20px;
+      top: 18px;
+      display: flex;
+      gap: 8px;
+    }
+    .main-container {
+      margin-top: 30px;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .problem-card {
+      width: 380px;
+      max-width: 95vw;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      padding: 32px 24px 24px 24px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .problem-title {
+      font-size: 1.1rem;
+      color: #1b4d3e;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .enunciado {
+      font-size: 1.15rem;
+      margin-bottom: 24px;
+      color: #444;
+      text-align: center;
+    }
+    input[type="text"], textarea {
+      font-size: 1.15rem;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #b2f0ff;
+      width: 95%;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      background: #f8feff;
+    }
+    .feedback {
+      min-height: 32px;
+      font-size: 1.07rem;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    button {
+      font-size: 1.13rem;
+      padding: 10px 22px;
+      border-radius: 10px;
+      border: none;
+      background: #b2f0ff;
+      color: #1877b7;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: background 0.2s, color 0.2s, transform 0.1s;
+    }
+    button:active {
+      background: #8ed6ea;
+      color: #0b3d5c;
+      transform: scale(0.97);
+    }
+    .progress {
+      margin-top: 4px;
+      font-size: 1rem;
+      color: #1b4d3e;
+    }
+    @media (max-width: 600px) {
+      .problem-card {
+        width: 95vw;
+        padding: 20px 5vw 18px 5vw;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<!-- ... head igual que antes ... -->
+<body>
+  <div class="header">
+    <div class="header-content">
+      <span>📘 Problemas de geometría</span>
+    </div>
+    <div class="nav-btns">
+      <button onclick="window.location.href='index.html'">Tarjetas</button>
+      <button onclick="window.location.href='problemas.html'">Problemas</button>
+    </div>
+    <div class="progress" id="progress">Problema 1 de N</div>
+  </div>
+
+  <div class="main-container">
+    <div class="problem-card" id="problem-card">
+      <!-- Contenido del problema aquí -->
+    </div>
+    <!-- ... resto igual ... -->
+<div class="buttons">
+  <button id="prev-btn">Anterior</button>
+  <button id="hint-btn">Pista 1</button>
+  <button id="check-btn">Comprobar</button>
+  <button id="next-btn">Siguiente</button>
+  <button id="shuffle-btn">Mezclar</button>
+</div>
+<!-- ... resto igual ... -->
+
+<script>
+let problemas = [];
+let indiceActual = 0;
+let comprobado = false;
+let nivelPista = 0;
+
+fetch('problemas.json')
+  .then(resp => resp.json())
+  .then(data => {
+    problemas = data;
+    mostrarProblema();
+  })
+  .catch(() => {
+    document.getElementById('problem-card').innerHTML = "<div style='color:#e74c3c;'>Error cargando problemas.json</div>";
+  });
+
+function mostrarProblema() {
+  if (!problemas.length) return;
+  comprobado = false;
+  nivelPista = 0;
+  const prob = problemas[indiceActual];
+  document.getElementById('problem-card').innerHTML = `
+    <div class="problem-title">${prob.titulo || `Problema ${indiceActual+1}`}</div>
+    <div class="enunciado">${prob.enunciado}</div>
+    <input id="respuesta-input" type="text" placeholder="Escribe tu respuesta" autocomplete="off">
+    <div id="hint" style="margin-top:10px; color:#1b4d3e; min-height:24px;"></div>
+    <div class="feedback" id="feedback"></div>
+  `;
+  document.getElementById('progress').textContent = `Problema ${indiceActual+1} de ${problemas.length}`;
+  document.getElementById('respuesta-input').value = '';
+  document.getElementById('respuesta-input').focus();
+  document.getElementById('respuesta-input').addEventListener('keydown', function(e){
+    if(e.key === 'Enter') comprobarRespuesta();
+  });
+
+  // Reset hint button state
+  const hintBtn = document.getElementById('hint-btn');
+  hintBtn.disabled = false;
+  hintBtn.textContent = "Pista 1";
+}
+
+function normalizarTexto(texto) {
+  return texto.trim().toLowerCase().replace(/\s+/g,'').replace(/[,;.]/g,'');
+}
+
+function comprobarRespuesta() {
+  if (comprobado) return;
+  const prob = problemas[indiceActual];
+  const entrada = normalizarTexto(document.getElementById('respuesta-input').value);
+  let correcta = false;
+  if (Array.isArray(prob.respuesta)) {
+    correcta = prob.respuesta.some(r => normalizarTexto(r) === entrada);
+  } else {
+    correcta = normalizarTexto(prob.respuesta) === entrada;
+  }
+  const feedback = document.getElementById('feedback');
+  if (correcta) {
+    feedback.innerHTML = `<span style="color:green;font-weight:bold;">¡Correcto!</span>` +
+      (prob.mnemotecnia ? `<br><span class="mnemotecnia"><b>Regla mnemotécnica:</b> ${prob.mnemotecnia}</span>` : '');
+  } else {
+    feedback.innerHTML = `<span style="color:#e74c3c;font-weight:bold;">Incorrecto.</span><br>
+      Respuesta esperada: <b>${Array.isArray(prob.respuesta) ? prob.respuesta[0] : prob.respuesta}</b>` +
+      (prob.mnemotecnia ? `<br><span class="mnemotecnia"><b>Regla mnemotécnica:</b> ${prob.mnemotecnia}</span>` : '');
+  }
+  comprobado = true;
+}
+
+document.getElementById('check-btn').addEventListener('click', comprobarRespuesta);
+
+document.getElementById('hint-btn').addEventListener('click', function(){
+  const prob = problemas[indiceActual];
+  const hintDiv = document.getElementById('hint');
+  nivelPista += 1;
+  if (nivelPista === 1 && prob.pista1) {
+    hintDiv.innerHTML = `<b>Pista 1:</b> ${prob.pista1}`;
+    this.textContent = prob.pista2 ? "Pista 2" : "Sin más pistas";
+    if (!prob.pista2) this.disabled = true;
+  } else if (nivelPista === 2 && prob.pista2) {
+    hintDiv.innerHTML += `<br><b>Pista 2:</b> ${prob.pista2}`;
+    this.textContent = "Sin más pistas";
+    this.disabled = true;
+  }
+});
+
+document.getElementById('next-btn').addEventListener('click', () => {
+  if (!problemas.length) return;
+  indiceActual = (indiceActual + 1) % problemas.length;
+  mostrarProblema();
+});
+document.getElementById('prev-btn').addEventListener('click', () => {
+  if (!problemas.length) return;
+  indiceActual = (indiceActual - 1 + problemas.length) % problemas.length;
+  mostrarProblema();
+});
+document.getElementById('shuffle-btn').addEventListener('click', () => {
+  if (!problemas.length) return;
+  barajar(problemas);
+  indiceActual = 0;
+  mostrarProblema();
+});
+
+function barajar(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+</script>
+
+</body>
+</html>
