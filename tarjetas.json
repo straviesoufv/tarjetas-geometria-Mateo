@@ -1,0 +1,86 @@
+[
+  {
+    "nombre": "Cuadrado",
+    "imagen": "svg pendiente",
+    "area": "A = a × a",
+    "perimetro": "P = 4 × a",
+    "mnemotecnia": "¡Campo perfecto! Área: lado por lado. Perímetro: 4 carreras por la banda."
+  },
+  {
+    "nombre": "Rectángulo",
+    "imagen": "svg pendiente",
+    "area": "A = b × h",
+    "perimetro": "P = 2 × (b + h)",
+    "mnemotecnia": "¡Corre por largo y ancho! Área: base por altura. Perímetro: doble vuelta al campo."
+  },
+  {
+    "nombre": "Paralelogramo",
+    "imagen": "svg pendiente",
+    "area": "A = b × h",
+    "perimetro": "P = 2 × (a + b)",
+    "mnemotecnia": "¡El campo se ha torcido! Pero se juega igual: área es base por altura."
+  },
+  {
+    "nombre": "Rombo",
+    "imagen": "svg pendiente",
+    "area": "A = (D × d) ÷ 2",
+    "perimetro": "P = 4 × a",
+    "mnemotecnia": "¡Pase en X! Diagonal grande por pequeña, y divide entre 2."
+  },
+  {
+    "nombre": "Trapecio",
+    "imagen": "svg pendiente",
+    "area": "A = (B + b) × h ÷ 2",
+    "perimetro": "P = B + b + a + c",
+    "mnemotecnia": "¡Jugada por bandas! Suma las bases, sube la altura y divide entre 2."
+  },
+  {
+    "nombre": "Trapecio recto",
+    "imagen": "svg pendiente",
+    "area": "A = (B + b) × h ÷ 2",
+    "perimetro": "P = B + b + 2 × h",
+    "mnemotecnia": "¡Dos defensas firmes! Misma jugada que el trapecio, pero con lados rectos."
+  },
+  {
+    "nombre": "Triángulo equilátero",
+    "imagen": "svg pendiente",
+    "area": "A = (a × h) ÷ 2",
+    "perimetro": "P = 3 × a",
+    "mnemotecnia": "¡Tridente goleador! Área: base por altura entre 2. Perímetro: 3 pases iguales."
+  },
+  {
+    "nombre": "Triángulo isósceles",
+    "imagen": "svg pendiente",
+    "area": "A = (b × h) ÷ 2",
+    "perimetro": "P = 2 × a + b",
+    "mnemotecnia": "¡2 defensas iguales! Área: base por altura entre 2. Perímetro: 2+1."
+  },
+  {
+    "nombre": "Triángulo escaleno",
+    "imagen": "svg pendiente",
+    "area": "A = (b × h) ÷ 2",
+    "perimetro": "P = a + b + c",
+    "mnemotecnia": "¡Equipo desordenado! Pero el área no cambia: base por altura entre 2."
+  },
+  {
+    "nombre": "Pentágono regular",
+    "imagen": "svg pendiente",
+    "area": "A = (P × apotema) ÷ 2",
+    "perimetro": "P = 5 × l",
+    "mnemotecnia": "¡Pases al centro! Perímetro × apotema entre 2. 5 lados iguales."
+  },
+  {
+    "nombre": "Hexágono regular",
+    "imagen": "svg pendiente",
+    "area": "A = (P × apotema) ÷ 2",
+    "perimetro": "P = 6 × l",
+    "mnemotecnia": "¡Rueda de 6 jugadores! Igual que el pentágono, pero con 6 toques."
+  },
+  {
+    "nombre": "Círculo",
+    "imagen": "svg pendiente",
+    "area": "A = π × r²",
+    "perimetro": "P = 2 × π × r",
+    "mnemotecnia": "¡El balón! Área: pi por radio al cuadrado. Perímetro: vuelta al balón con 2 pi radio."
+  }
+]

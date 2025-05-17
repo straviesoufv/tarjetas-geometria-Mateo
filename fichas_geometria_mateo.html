@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fichas de Geometría - Mateo</title>
+  <style>
+    body {
+      background: linear-gradient(120deg, #b2f0ff 0%, #e0ffe7 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+      min-height: 100vh;
+      justify-content: center;
+    }
+    .card-container {
+      perspective: 1200px;
+      margin: 30px 0 20px 0;
+      width: 340px;
+      height: 430px;
+      max-width: 95vw;
+      max-height: 65vw;
+    }
+    .card {
+      width: 100%;
+      height: 100%;
+      border-radius: 32px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      background: #fff;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+      font-size: 1.1rem;
+    }
+    .card.flipped {
+      transform: rotateY(180deg);
+    }
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 32px 24px 24px 24px;
+      box-sizing: border-box;
+      border-radius: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backface-visibility: hidden;
+    }
+    .card-front {
+      background: linear-gradient(120deg, #e6f7ff 60%, #fffbe6 100%);
+      z-index: 2;
+    }
+    .card-back {
+      background: linear-gradient(120deg, #fffbe6 60%, #e6f7ff 100%);
+      transform: rotateY(180deg);
+      z-index: 1;
+    }
+    .card-title {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #1877b7;
+      margin-bottom: 18px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    .svg-figura {
+      width: 140px;
+      height: 140px;
+      margin-bottom: 18px;
+      display: block;
+    }
+    .formulas {
+      font-size: 1.3rem;
+      color: #1b4d3e;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .mnemotecnia {
+      font-size: 1.1rem;
+      color: #f2a900;
+      margin-top: 10px;
+      text-align: center;
+      font-style: italic;
+    }
+    .buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    button {
+      font-size: 1.25rem;
+      padding: 12px 26px;
+      border-radius: 16px;
+      border: none;
+      background: #b2f0ff;
+      color: #1877b7;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.1s;
+    }
+    button:active {
+      background: #8ed6ea;
+      color: #0b3d5c;
+      transform: scale(0.97);
+    }
+    @media (max-width: 600px) {
+      .card-container {
+        width: 95vw;
+        height: 62vw;
+        min-height: 260px;
+        min-width: 180px;
+      }
+      .card-title {
+        font-size: 1.3rem;
+      }
+      .svg-figura {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="card-container">
+      <div class="card" id="flashcard">
+        <div class="card-face card-front" id="card-front">
+          <!-- Contenido frontal -->
+        </div>
+        <div class="card-face card-back" id="card-back">
+          <!-- Contenido reverso -->
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button id="prev-btn">Anterior</button>
+      <button id="flip-btn">Girar tarjeta</button>
+      <button id="next-btn">Siguiente</button>
+      <button id="shuffle-btn">Mezclar</button>
+      <button id="practice-btn">Modo práctica</button>
+    </div>
+  </div>
+  <script>
+    window.onload = function() {
+      // Diccionario de SVGs por nombre
+      const SVGs = {
+        "Cuadrado": `<svg class='svg-figura' viewBox='0 0 100 100'><rect x='15' y='15' width='70' height='70' rx='8' fill='#b2f0ff' stroke='#1877b7' stroke-width='4'/></svg>`,
+        "Rectángulo": `<svg class='svg-figura' viewBox='0 0 100 100'><rect x='12' y='28' width='76' height='44' rx='8' fill='#ffe9a7' stroke='#f2a900' stroke-width='4'/></svg>`,
+        "Paralelogramo": `<svg class='svg-figura' viewBox='0 0 100 100'><polygon points='20,80 35,20 90,20 75,80' fill='#d0ffd6' stroke='#1b4d3e' stroke-width='4'/></svg>`,
+        "Rombo": `<svg class='svg-figura' viewBox='0 0 100 100'><polygon points='50,10 90,50 50,90 10,50' fill='#fffbe6' stroke='#f2a900' stroke-width='4'/></svg>`,
+        "Trapecio": `<svg class='svg-figura' viewBox='0 0 100 100'><polygon points='15,80 85,80 70,30 30,30' fill='#b2f0ff' stroke='#1877b7' stroke-width='4'/></svg>`,
+        "Trapecio recto": `<svg class='svg-figura' viewBox='0 0 100 100'><polygon points='18,80 82,80 82,30 38,30' fill='#ffe9a7' stroke='#f2a900' stroke-width='4'/></svg>`,
+        "Triángulo equilátero": `<svg class='svg-figura' viewBox='0 0 100 100'><polygon points='50,15 90,85 10,85' fill='#d0ffd6' stroke='#1b4d3e' stroke-width='4'/></svg>`,
+        "Triángulo isósceles": `<svg class='svg-figura' viewBox='0 0 100 100'><polygon points='50,20 85,85 15,85' fill='#b2f0ff' stroke='#1877b7' stroke-width='4'/></svg>`,
+        "Triángulo escaleno": `<svg class='svg-figura' viewBox='0 0 100 100'><polygon points='20,85 80,85 60,25' fill='#ffe9a7' stroke='#f2a900' stroke-width='4'/></svg>`,
+        "Pentágono regular": `<svg class='svg-figura' viewBox='0 0 100 100'><polygon points='50,15 90,42 73,85 27,85 10,42' fill='#d0ffd6' stroke='#1b4d3e' stroke-width='4'/></svg>`,
+        "Hexágono regular": `<svg class='svg-figura' viewBox='0 0 100 100'><polygon points='50,10 90,35 90,75 50,100 10,75 10,35' fill='#b2f0ff' stroke='#1877b7' stroke-width='4'/></svg>`,
+        "Círculo": `<svg class='svg-figura' viewBox='0 0 100 100'><circle cx='50' cy='50' r='38' fill='#ffe9a7' stroke='#f2a900' stroke-width='4'/></svg>`
+      };
+    
+      let tarjetas = [];
+      let indiceActual = 0;
+      let girada = false;
+      let modoPractica = false;
+      let areaComprobada = false;
+    
+      fetch('tarjetas.json')
+        .then(resp => resp.json())
+        .then(data => {
+          tarjetas = data.map(tarjeta => ({
+            ...tarjeta,
+            svg: SVGs[tarjeta.nombre] || ''
+          }));
+          mostrarTarjeta();
+        })
+        .catch(() => {
+          alert('Error cargando tarjetas.json');
+        });
+    
+      function barajar(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+    
+      function mostrarTarjeta() {
+        if (!tarjetas.length) return;
+        const tarjeta = tarjetas[indiceActual];
+        document.getElementById('card-front').innerHTML = `
+          <div class="card-title">${tarjeta.nombre}</div>
+          ${tarjeta.svg}
+        `;
+        if (!modoPractica) {
+          document.getElementById('card-back').innerHTML = `
+            <div class="card-title">${tarjeta.nombre}</div>
+            <div class="formulas"><b>Área:</b> ${tarjeta.area}</div>
+            <div class="formulas"><b>Perímetro:</b> ${tarjeta.perimetro}</div>
+            <div class="mnemotecnia">${tarjeta.mnemotecnia}</div>
+          `;
+        } else {
+          document.getElementById('card-back').innerHTML = `
+            <div class="card-title">${tarjeta.nombre}</div>
+            <div class="formulas"><b>Área:</b></div>
+            <input id="area-input" type="text" placeholder="Escribe la fórmula del área" style="font-size:1.2rem;padding:8px 12px;border-radius:8px;border:1px solid #b2f0ff;width:90%;margin-bottom:10px;" autocomplete="off">
+            <button id="comprobar-btn" style="font-size:1.1rem;padding:8px 18px;border-radius:10px;background:#d0ffd6;color:#1b4d3e;border:none;margin-bottom:8px;">Comprobar</button>
+            <div id="feedback" style="min-height:32px;font-size:1.1rem;margin-top:10px;"></div>
+          `;
+          areaComprobada = false;
+          setTimeout(() => {
+            document.getElementById('comprobar-btn').onclick = function() {
+              comprobarArea();
+            };
+            document.getElementById('area-input').addEventListener('keydown', function(e) {
+              if (e.key === 'Enter') comprobarArea();
+            });
+          }, 0);
+        }
+        document.getElementById('flashcard').classList.remove('flipped');
+        girada = false;
+      }
+    
+      function comprobarArea() {
+        if (areaComprobada) return;
+        const tarjeta = tarjetas[indiceActual];
+        const input = document.getElementById('area-input').value.trim().replace(/\\s+/g, '').toLowerCase();
+        const solucion = tarjeta.area.trim().replace(/\\s+/g, '').toLowerCase();
+        const feedback = document.getElementById('feedback');
+        if (input === solucion) {
+          feedback.innerHTML = `<span style='color:green;font-weight:bold;'>¡Correcto!</span><br>Área: <b>${tarjeta.area}</b><br><span class='mnemotecnia'>${tarjeta.mnemotecnia}</span>`;
+        } else {
+          feedback.innerHTML = `<span style='color:#e74c3c;font-weight:bold;'>Incorrecto.</span><br>La fórmula correcta es:<br><b>${tarjeta.area}</b><br><span class='mnemotecnia'>${tarjeta.mnemotecnia}</span>`;
+        }
+        areaComprobada = true;
+      }
+    
+      document.getElementById('flip-btn').addEventListener('click', () => {
+        const card = document.getElementById('flashcard');
+        card.classList.toggle('flipped');
+        girada = !girada;
+      });
+    
+      document.getElementById('next-btn').addEventListener('click', () => {
+        if (!tarjetas.length) return;
+        indiceActual = (indiceActual + 1) % tarjetas.length;
+        mostrarTarjeta();
+      });
+    
+      document.getElementById('prev-btn').addEventListener('click', () => {
+        if (!tarjetas.length) return;
+        indiceActual = (indiceActual - 1 + tarjetas.length) % tarjetas.length;
+        mostrarTarjeta();
+      });
+    
+      document.getElementById('shuffle-btn').addEventListener('click', () => {
+        if (!tarjetas.length) return;
+        barajar(tarjetas);
+        indiceActual = 0;
+        mostrarTarjeta();
+      });
+    
+      document.getElementById('practice-btn').addEventListener('click', () => {
+        modoPractica = !modoPractica;
+        document.getElementById('practice-btn').textContent = modoPractica ? 'Salir práctica' : 'Modo práctica';
+        mostrarTarjeta();
+      });
+    };
+    </script>
+</body>
+</html>
