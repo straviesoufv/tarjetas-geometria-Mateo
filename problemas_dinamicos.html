@@ -12,6 +12,68 @@
       padding: 0;
       min-height: 100vh;
     }
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.header-content {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.8rem;
+  color: #1877b7;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+.header-icon {
+  font-size: 2rem;
+}
+
+.header {
+  position: relative;
+}
+
+.nav-btns {
+  position: absolute;
+  top: 18px;
+  right: 28px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+.nav-btns button {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border-radius: 16px;
+  border: none;
+  background: #b2f0ff;
+  color: #1877b7;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+.nav-btns button:active {
+  background: #8ed6ea;
+  color: #0b3d5c;
+  transform: scale(0.97);
+}
+.nav-btns button.active {
+  background: #e6f7ff;
+  color: #1b4d3e;
+  cursor: default;
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  .nav-btns {
+    top: 8px;
+    right: 10px;
+    gap: 4px;
+  }
+  .nav-btns button {
+    font-size: 0.97rem;
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
+}
     .header {
       background: rgba(255,255,255,0.93);
       padding: 24px 8px 18px 8px;
@@ -207,8 +269,19 @@
     }
   </style>
 </head>
+  <header class="header">
+    <div class="header-content">
+      <span class="header-icon">⚽</span>
+      <span>Mateo, ¡vamos a estudiar geometría!</span>
+      <span class="header-icon">📐</span>
+    </div>
+    <div class="nav-btns">
+      <button onclick="window.location.href='index.html'">Tarjetas para estudiar</button>
+      <button class="active" onclick="window.location.href='index.html'">Problemas</button>
+    </div>
+  </header>
 <body>
-  <div class="header">📘 Problema de geometría futbolera aleatorio</div>
+  <div class="header">📘 Problemas de geometría futbolera</div>
   <div class="problem-container" style="display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap;">
     <div style="flex: 1; min-width: 220px;">
       <div class="problem" id="enunciado">Cargando problema...</div>
@@ -301,16 +374,22 @@ function mostrarPista() {
   const hintBtn = document.getElementById("hint-btn");
 
   if (estado.pistaMostrada === 0) {
-    feedback.textContent = render(p.pista1);
+    feedback.innerHTML = render(p.pista1);
     hintBtn.textContent = "Pista 2";
     estado.pistaMostrada = 1;
   } else if (estado.pistaMostrada === 1) {
-    feedback.textContent += "\n" + render(p.pista2);
+    feedback.innerHTML += "<br>" + render(p.pista2);
+    hintBtn.textContent = "Pista 3";
+    estado.pistaMostrada = 2;
+  } else if (estado.pistaMostrada === 2) {
+    feedback.innerHTML += "<br>" + render(p.pista3);
     hintBtn.textContent = "Ya no hay más pistas";
     hintBtn.disabled = true;
-    estado.pistaMostrada = 2;
+    estado.pistaMostrada = 3;
   }
 }
+
+
 
 function comprobarRespuesta() {
   const input = document.getElementById("respuesta-input").value.trim().replace(",", ".");

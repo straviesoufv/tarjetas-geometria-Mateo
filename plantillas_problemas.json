@@ -14,10 +14,11 @@
       }
     },
     "formato": "{{base}} * {{altura}}",
-    "pista1": "Área = base × altura.",
-    "pista2": "Multiplica {{base}} por {{altura}}.",
+    "pista1": "La figura es un rectángulo.",
+    "pista2": "Área = base × altura.",
     "mnemotecnia": "Como una alfombra: largo × ancho.",
-    "formula": "Área = base × altura"
+    "formula": "Área = base × altura",
+    "pista3": "Multiplica {{base}} por {{altura}}."
   },
   {
     "tipo": "perímetro_cuadrado",
@@ -30,10 +31,11 @@
       }
     },
     "formato": "{{lado}} * 4",
-    "pista1": "Perímetro = 4 × lado.",
-    "pista2": "Multiplica 4 por {{lado}}.",
+    "pista1": "La figura es un cuadrado.",
+    "pista2": "Perímetro = 4 × lado.",
     "mnemotecnia": "Cuadrado = 4 lados iguales.",
-    "formula": "Perímetro = 4 × lado"
+    "formula": "Perímetro = 4 × lado",
+    "pista3": "Multiplica 4 por {{lado}}."
   },
   {
     "tipo": "área_círculo",
@@ -46,10 +48,11 @@
       }
     },
     "formato": "3.14 * {{radio}} * {{radio}}",
-    "pista1": "Área del círculo = π × radio².",
-    "pista2": "Multiplica 3,14 × {{radio}} × {{radio}}.",
+    "pista1": "La figura es un círculo.",
+    "pista2": "Área del círculo = π × radio².",
     "mnemotecnia": "El círculo gira con π·r².",
-    "formula": "Área = π × radio²"
+    "formula": "Área = π × radio²",
+    "pista3": "Multiplica 3,14 × {{radio}} × {{radio}}."
   },
   {
     "tipo": "área_trapecio",
@@ -70,10 +73,11 @@
       }
     },
     "formato": "(({{base_mayor}} + {{base_menor}}) * {{altura}}) / 2",
-    "pista1": "Área = (base mayor + base menor) × altura ÷ 2.",
-    "pista2": "Suma {{base_mayor}} y {{base_menor}}, multiplica por {{altura}}, divide entre 2.",
+    "pista1": "La figura es un trapecio.",
+    "pista2": "Área = (base mayor + base menor) × altura ÷ 2.",
     "mnemotecnia": "Trapecio: suma las bases, por altura, entre 2.",
-    "formula": "Área = (base mayor + base menor) × altura ÷ 2"
+    "formula": "Área = (base mayor + base menor) × altura ÷ 2",
+    "pista3": "Suma {{base_mayor}} y {{base_menor}}, multiplica por {{altura}}, divide entre 2."
   },
   {
     "tipo": "área_rombo",
@@ -90,10 +94,11 @@
       }
     },
     "formato": "({{D}} * {{d}}) / 2",
-    "pista1": "Área = (diagonal mayor × diagonal menor) ÷ 2.",
-    "pista2": "Multiplica {{D}} por {{d}} y divide entre 2.",
+    "pista1": "La figura es un rombo.",
+    "pista2": "Área = (diagonal mayor × diagonal menor) ÷ 2.",
     "mnemotecnia": "Rombo = D × d ÷ 2.",
-    "formula": "Área = (diagonal mayor × diagonal menor) ÷ 2"
+    "formula": "Área = (diagonal mayor × diagonal menor) ÷ 2",
+    "pista3": "Multiplica {{D}} por {{d}} y divide entre 2."
   },
   {
     "tipo": "perimetro_rectangulo",
@@ -110,10 +115,11 @@
       }
     },
     "formato": "2 * ({{largo}} + {{alto}})",
-    "pista1": "Perímetro = 2 × (largo + alto).",
-    "pista2": "Suma {{largo}} + {{alto}} y multiplica por 2.",
+    "pista1": "La figura es un rectángulo.",
+    "pista2": "Perímetro = 2 × (largo + alto).",
     "mnemotecnia": "Rodea el cartel completo: 2 × (base + altura).",
-    "formula": "Perímetro = 2 × (largo + alto)"
+    "formula": "Perímetro = 2 × (largo + alto)",
+    "pista3": "Suma {{largo}} + {{alto}} y multiplica por 2."
   },
   {
     "tipo": "perimetro_triangulo_equilatero",
@@ -126,10 +132,11 @@
       }
     },
     "formato": "{{lado}} * 3",
-    "pista1": "Todos los lados son iguales.",
-    "pista2": "Multiplica {{lado}} × 3.",
+    "pista1": "La figura es un triángulo equilátero.",
+    "pista2": "Todos los lados son iguales.",
     "mnemotecnia": "Equilátero: 3 lados iguales = lado × 3.",
-    "formula": "Perímetro = 3 × lado"
+    "formula": "Perímetro = 3 × lado",
+    "pista3": "Multiplica {{lado}} × 3."
   },
   {
     "tipo": "area_triangulo",
@@ -146,10 +153,11 @@
       }
     },
     "formato": "({{base}} * {{altura}}) / 2",
-    "pista1": "Área = (base × altura) ÷ 2.",
-    "pista2": "Multiplica {{base}} por {{altura}} y divide entre 2.",
+    "pista1": "La figura es un triángulo.",
+    "pista2": "Área = (base × altura) ÷ 2.",
     "mnemotecnia": "Triángulo = base × altura ÷ 2.",
-    "formula": "Área = (base × altura) ÷ 2"
+    "formula": "Área = (base × altura) ÷ 2",
+    "pista3": "Multiplica {{base}} por {{altura}} y divide entre 2."
   },
   {
     "tipo": "area_pentagono",
@@ -166,10 +174,11 @@
       }
     },
     "formato": "({{perimetro}} * {{apotema}}) / 2",
-    "pista1": "Área = (Perímetro × Apotema) ÷ 2.",
-    "pista2": "Multiplica {{perimetro}} × {{apotema}} y divide entre 2.",
+    "pista1": "La figura es un pentágono.",
+    "pista2": "Área = (Perímetro × Apotema) ÷ 2.",
     "mnemotecnia": "Polígono regular = perímetro × apotema ÷ 2.",
-    "formula": "Área = (Perímetro × Apotema) ÷ 2"
+    "formula": "Área = (Perímetro × Apotema) ÷ 2",
+    "pista3": "Multiplica {{perimetro}} × {{apotema}} y divide entre 2."
   },
   {
     "tipo": "perimetro_hexagono",
@@ -182,10 +191,11 @@
       }
     },
     "formato": "6 * {{lado}}",
-    "pista1": "Hexágono regular = 6 × lado.",
-    "pista2": "Multiplica 6 × {{lado}}.",
+    "pista1": "La figura es un hexágono.",
+    "pista2": "Hexágono regular = 6 × lado.",
     "mnemotecnia": "Cada lado es igual, y hay 6: lado × 6.",
-    "formula": "Perímetro = 6 × lado"
+    "formula": "Perímetro = 6 × lado",
+    "pista3": "Multiplica 6 × {{lado}}."
   },
   {
     "tipo": "area_cuadrado",
@@ -198,10 +208,11 @@
       }
     },
     "formato": "{{lado}} * {{lado}}",
-    "pista1": "Área = lado × lado.",
-    "pista2": "Multiplica {{lado}} por sí mismo.",
+    "pista1": "La figura es un cuadrado.",
+    "pista2": "Área = lado × lado.",
     "mnemotecnia": "Área cuadrada: lado al cuadrado.",
-    "formula": "Área = lado × lado"
+    "formula": "Área = lado × lado",
+    "pista3": "Multiplica {{lado}} por sí mismo."
   },
   {
     "tipo": "area_trapecio_recto",
@@ -222,10 +233,11 @@
       }
     },
     "formato": "(({{base_mayor}} + {{base_menor}}) * {{altura}}) / 2",
-    "pista1": "Área = (b₁ + b₂) × h ÷ 2.",
-    "pista2": "Suma {{base_mayor}} + {{base_menor}}, multiplícalo por {{altura}} y divide entre 2.",
+    "pista1": "La figura es un trapecio recto.",
+    "pista2": "Área = (b₁ + b₂) × h ÷ 2.",
     "mnemotecnia": "Trapecio = (base mayor + menor) × altura ÷ 2.",
-    "formula": "Área = (base mayor + base menor) × altura ÷ 2"
+    "formula": "Área = (base mayor + base menor) × altura ÷ 2",
+    "pista3": "Suma {{base_mayor}} + {{base_menor}}, multiplícalo por {{altura}} y divide entre 2."
   },
   {
     "tipo": "area_romboide",
@@ -242,10 +254,11 @@
       }
     },
     "formato": "{{base}} * {{altura}}",
-    "pista1": "Área = base × altura.",
-    "pista2": "Multiplica {{base}} por {{altura}}.",
+    "pista1": "La figura es un romboide.",
+    "pista2": "Área = base × altura.",
     "mnemotecnia": "Como un rectángulo girado: base × altura.",
-    "formula": "Área = base × altura"
+    "formula": "Área = base × altura",
+    "pista3": "Multiplica {{base}} por {{altura}}."
   },
   {
     "tipo": "area_circulo_medio",
@@ -258,10 +271,11 @@
       }
     },
     "formato": "(3.14 * {{radio}} * {{radio}}) / 2",
-    "pista1": "Área círculo = π·r², y luego lo divides entre 2.",
-    "pista2": "Multiplica 3,14 × {{radio}}², y divide entre 2.",
+    "pista1": "La figura es un semicírculo.",
+    "pista2": "Área círculo = π·r², y luego lo divides entre 2.",
     "mnemotecnia": "Semicírculo = mitad de un círculo: π·r² ÷ 2.",
-    "formula": "Área = (π × radio²) ÷ 2"
+    "formula": "Área = (π × radio²) ÷ 2",
+    "pista3": "Multiplica 3,14 × {{radio}}², y divide entre 2."
   },
   {
     "tipo": "area_triangulo_escaleno",
@@ -278,10 +292,11 @@
       }
     },
     "formato": "({{base}} * {{altura}}) / 2",
-    "pista1": "Área = base × altura ÷ 2.",
-    "pista2": "Multiplica {{base}} por {{altura}}, divide entre 2.",
+    "pista1": "La figura es un triángulo escaleno.",
+    "pista2": "Área = base × altura ÷ 2.",
     "mnemotecnia": "Triángulo: base por altura, dividido entre 2.",
-    "formula": "Área = (base × altura) ÷ 2"
+    "formula": "Área = (base × altura) ÷ 2",
+    "pista3": "Multiplica {{base}} por {{altura}}, divide entre 2."
   },
   {
     "tipo": "area_hexagono",
@@ -298,10 +313,11 @@
       }
     },
     "formato": "({{perimetro}} * {{apotema}}) / 2",
-    "pista1": "Área = (Perímetro × Apotema) ÷ 2.",
-    "pista2": "Multiplica {{perimetro}} × {{apotema}}, y divide entre 2.",
+    "pista1": "La figura es un hexágono.",
+    "pista2": "Área = (Perímetro × Apotema) ÷ 2.",
     "mnemotecnia": "Polígonos regulares = perímetro × apotema ÷ 2.",
-    "formula": "Área = (Perímetro × Apotema) ÷ 2"
+    "formula": "Área = (Perímetro × Apotema) ÷ 2",
+    "pista3": "Multiplica {{perimetro}} × {{apotema}}, y divide entre 2."
   },
   {
     "tipo": "area_rectangulo_alfombra",
@@ -318,10 +334,11 @@
       }
     },
     "formato": "{{base}} * {{altura}}",
-    "pista1": "Área = largo × ancho.",
-    "pista2": "Multiplica {{base}} × {{altura}}.",
+    "pista1": "La figura es un rectángulo.",
+    "pista2": "Área = largo × ancho.",
     "mnemotecnia": "Alfombra: largo × ancho.",
-    "formula": "Área = largo × ancho"
+    "formula": "Área = largo × ancho",
+    "pista3": "Multiplica {{base}} × {{altura}}."
   },
   {
     "tipo": "area_cuadrado_pizarra",
@@ -334,10 +351,11 @@
       }
     },
     "formato": "{{lado}} * {{lado}}",
-    "pista1": "Área = lado × lado.",
-    "pista2": "Multiplica {{lado}} por sí mismo.",
+    "pista1": "La figura es un cuadrado.",
+    "pista2": "Área = lado × lado.",
     "mnemotecnia": "Cuadrado = lado al cuadrado.",
-    "formula": "Área = lado × lado"
+    "formula": "Área = lado × lado",
+    "pista3": "Multiplica {{lado}} por sí mismo."
   },
   {
     "tipo": "perimetro_rombo",
@@ -350,10 +368,11 @@
       }
     },
     "formato": "4 * {{lado}}",
-    "pista1": "Perímetro = 4 × lado.",
-    "pista2": "Multiplica {{lado}} × 4.",
+    "pista1": "La figura es un rombo.",
+    "pista2": "Perímetro = 4 × lado.",
     "mnemotecnia": "Rombo: 4 lados iguales.",
-    "formula": "Perímetro = 4 × lado"
+    "formula": "Perímetro = 4 × lado",
+    "pista3": "Multiplica {{lado}} × 4."
   },
   {
     "tipo": "area_triangulo_cesped",
@@ -370,10 +389,11 @@
       }
     },
     "formato": "({{base}} * {{altura}}) / 2",
-    "pista1": "Área = base × altura ÷ 2.",
-    "pista2": "Multiplica {{base}} × {{altura}} y divide entre 2.",
+    "pista1": "La figura es un triángulo.",
+    "pista2": "Área = base × altura ÷ 2.",
     "mnemotecnia": "Triángulo = base por altura entre 2.",
-    "formula": "Área = (base × altura) ÷ 2"
+    "formula": "Área = (base × altura) ÷ 2",
+    "pista3": "Multiplica {{base}} × {{altura}} y divide entre 2."
   },
   {
     "tipo": "perimetro_pentagono_escudo",
@@ -386,10 +406,11 @@
       }
     },
     "formato": "{{lado}} * 5",
-    "pista1": "Pentágono regular = 5 × lado.",
-    "pista2": "Multiplica {{lado}} × 5.",
+    "pista1": "La figura es un pentágono.",
+    "pista2": "Pentágono regular = 5 × lado.",
     "mnemotecnia": "5 lados iguales: lado × 5.",
-    "formula": "Perímetro = 5 × lado"
+    "formula": "Perímetro = 5 × lado",
+    "pista3": "Multiplica {{lado}} × 5."
   },
   {
     "tipo": "area_trapecio_publicidad",
@@ -410,10 +431,11 @@
       }
     },
     "formato": "(({{base_mayor}} + {{base_menor}}) * {{altura}}) / 2",
-    "pista1": "Área = (base mayor + base menor) × altura ÷ 2.",
-    "pista2": "Suma bases y multiplica por altura, luego divide entre 2.",
+    "pista1": "La figura es un trapecio.",
+    "pista2": "Área = (base mayor + base menor) × altura ÷ 2.",
     "mnemotecnia": "Trapecio = suma de bases × altura ÷ 2.",
-    "formula": "Área = (base mayor + base menor) × altura ÷ 2"
+    "formula": "Área = (base mayor + base menor) × altura ÷ 2",
+    "pista3": "Suma bases y multiplica por altura, luego divide entre 2."
   },
   {
     "tipo": "area_paralelogramo_toldo",
@@ -430,10 +452,11 @@
       }
     },
     "formato": "{{base}} * {{altura}}",
-    "pista1": "Área = base × altura.",
-    "pista2": "Multiplica {{base}} × {{altura}}.",
+    "pista1": "La figura es un paralelogramo.",
+    "pista2": "Área = base × altura.",
     "mnemotecnia": "Paralelogramo: como un rectángulo inclinado.",
-    "formula": "Área = base × altura"
+    "formula": "Área = base × altura",
+    "pista3": "Multiplica {{base}} × {{altura}}."
   },
   {
     "tipo": "area_circulo_marcaje",
@@ -446,10 +469,11 @@
       }
     },
     "formato": "3.14 * {{radio}} * {{radio}}",
-    "pista1": "Área = π × radio².",
-    "pista2": "Multiplica 3,14 × {{radio}}².",
+    "pista1": "La figura es un círculo.",
+    "pista2": "Área = π × radio².",
     "mnemotecnia": "Área circular: π·r².",
-    "formula": "Área = π × radio²"
+    "formula": "Área = π × radio²",
+    "pista3": "Multiplica 3,14 × {{radio}}²."
   },
   {
     "tipo": "area_rombo_cesped",
@@ -466,10 +490,11 @@
       }
     },
     "formato": "({{D}} * {{d}}) / 2",
-    "pista1": "Área = (diagonal mayor × diagonal menor) ÷ 2.",
-    "pista2": "Multiplica {{D}} × {{d}}, divide entre 2.",
+    "pista1": "La figura es un rombo.",
+    "pista2": "Área = (diagonal mayor × diagonal menor) ÷ 2.",
     "mnemotecnia": "Rombo = D × d ÷ 2.",
-    "formula": "Área = (diagonal mayor × diagonal menor) ÷ 2"
+    "formula": "Área = (diagonal mayor × diagonal menor) ÷ 2",
+    "pista3": "Multiplica {{D}} × {{d}}, divide entre 2."
   },
   {
     "tipo": "area_rectangulo_fijo",
@@ -486,10 +511,11 @@
       }
     },
     "formato": "{{base}} * {{altura}}",
-    "pista1": "Recuerda: el área de un rectángulo es base por altura.",
-    "pista2": "Multiplica {{base}} por {{altura}}.",
+    "pista1": "La figura es un rectángulo.",
+    "pista2": "Recuerda: el área de un rectángulo es base por altura.",
     "mnemotecnia": "Como una alfombra: largo × ancho.",
-    "formula": "Área = base × altura"
+    "formula": "Área = base × altura",
+    "pista3": "Multiplica {{base}} por {{altura}}."
   },
   {
     "tipo": "area_cuadrado_fijo",
@@ -502,10 +528,11 @@
       }
     },
     "formato": "{{lado}} * {{lado}}",
-    "pista1": "Área de un cuadrado = lado × lado.",
-    "pista2": "Multiplica {{lado}} × {{lado}}.",
+    "pista1": "La figura es un cuadrado.",
+    "pista2": "Área de un cuadrado = lado × lado.",
     "mnemotecnia": "Piensa en un cuadrado como una portería vista desde arriba: lado al cuadrado.",
-    "formula": "Área = lado × lado"
+    "formula": "Área = lado × lado",
+    "pista3": "Multiplica {{lado}} × {{lado}}."
   },
   {
     "tipo": "area_circulo_fijo",
@@ -518,10 +545,11 @@
       }
     },
     "formato": "3.14 * {{radio}} * {{radio}}",
-    "pista1": "Área del círculo = π × radio².",
-    "pista2": "Multiplica 3,14 × {{radio}} × {{radio}}.",
+    "pista1": "La figura es un círculo.",
+    "pista2": "Área del círculo = π × radio².",
     "mnemotecnia": "El círculo gira con π·r².",
-    "formula": "Área = π × radio²"
+    "formula": "Área = π × radio²",
+    "pista3": "Multiplica 3,14 × {{radio}} × {{radio}}."
   },
   {
     "tipo": "perimetro_triangulo_equilatero_fijo",
@@ -534,10 +562,11 @@
       }
     },
     "formato": "{{lado}} * 3",
-    "pista1": "Equilátero = tres lados iguales.",
-    "pista2": "Multiplica {{lado}} × 3.",
+    "pista1": "La figura es un triángulo equilátero.",
+    "pista2": "Equilátero = tres lados iguales.",
     "mnemotecnia": "Triángulo equilátero: suma los tres lados iguales.",
-    "formula": "Perímetro = 3 × lado"
+    "formula": "Perímetro = 3 × lado",
+    "pista3": "Multiplica {{lado}} × 3."
   },
   {
     "tipo": "area_triangulo_isosceles_fijo",
@@ -554,9 +583,10 @@
       }
     },
     "formato": "({{base}} * {{altura}}) / 2",
-    "pista1": "Área = (base × altura) ÷ 2.",
-    "pista2": "Multiplica {{base}} × {{altura}} y divide entre 2.",
+    "pista1": "La figura es un triángulo isósceles.",
+    "pista2": "Área = (base × altura) ÷ 2.",
     "mnemotecnia": "Triángulo: base por altura dividido por 2.",
-    "formula": "Área = (base × altura) ÷ 2"
+    "formula": "Área = (base × altura) ÷ 2",
+    "pista3": "Multiplica {{base}} × {{altura}} y divide entre 2."
   }
 ]
