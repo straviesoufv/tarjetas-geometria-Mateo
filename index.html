@@ -149,7 +149,7 @@
       font-size: 1rem;
       color: #1b4d3e;
     }
-    
+
     @media (max-width: 600px) {
       .card-container {
         width: 95vw;
@@ -273,6 +273,8 @@
         }
         document.getElementById('flashcard').classList.remove('flipped');
         girada = false;
+        document.getElementById('progress').textContent =
+          `Tarjeta ${indiceActual + 1} de ${tarjetas.length}`;
       }
     
       function comprobarArea() {
