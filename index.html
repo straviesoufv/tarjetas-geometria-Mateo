@@ -412,13 +412,16 @@
       }
     
       function normalizarTexto(texto) {
+        if (!texto) return '';
         return texto
-          .toLowerCase()                 // Convertir a minúsculas
-          .replace(/\s+/g, '')           // Eliminar espacios
+          .toLowerCase()
+          .replace(/\s+/g, '')
+          .replace(/π/g, 'pi')          // Normalizar pi para que 'pi' y 'π' estén alineados
           .replace(/[×xX*]/g, '·')       // Normalizar signos de multiplicación
           .replace(/\^2/g, '²')          // Normalizar potencias
           .replace(/²²/g, '²')           // Evitar duplicados
-          .replace(/[()]/g, '');         // Eliminar paréntesis
+          .replace(/[()]/g, '')          // Eliminar paréntesis
+          .replace(/^[ap]=/, '');        // Ignorar prefijos como 'A=' o 'P='
       }
 
       function comprobarArea() {
